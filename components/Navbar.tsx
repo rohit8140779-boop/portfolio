@@ -22,7 +22,6 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
   const navLinks = [
     { id: Section.HOME, label: 'Intro' },
     { id: Section.WORK, label: 'Work' },
-    // About section removed
     { id: Section.CONTACT, label: 'Contact' },
   ];
 
@@ -46,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ activeSection, scrollToSection }) => {
             <Scissors className="w-4 h-4 text-white absolute -bottom-1 -right-1 z-20" />
           </div>
           <span className="text-xl font-bold tracking-wider text-white">
-            ABHISHEK<span className="text-blue-500">VISUALS</span>
+            ABHI<span className="text-blue-500">VISUALS.IN</span>
           </span>
         </div>
 

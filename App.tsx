@@ -29,7 +29,7 @@ function App() {
       <main>
         <Hero scrollToSection={scrollToSection} />
         
-        {/* New Impact/Results Section */}
+        {/* Impact/Results Section */}
         <ImpactSection />
 
         {/* Skills Section */}
@@ -42,8 +42,15 @@ function App() {
         <ContactSection />
       </main>
 
-      <footer className="py-8 bg-black border-t border-white/10 text-center text-gray-600 text-sm">
-        <p>&copy; {new Date().getFullYear()} Abhishek Visuals. All rights reserved.</p>
+      <footer className="py-12 bg-black border-t border-white/10 text-center">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center gap-4">
+          <p className="text-white font-bold tracking-widest text-lg">
+            ABHI<span className="text-blue-500">VISUALS.IN</span>
+          </p>
+          <p className="text-gray-600 text-sm">
+            &copy; {new Date().getFullYear()} Abhishek Sharma. All rights reserved.
+          </p>
+        </div>
       </footer>
 
       <AIChatBot />

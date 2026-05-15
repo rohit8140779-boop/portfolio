@@ -8,12 +8,11 @@ const ImpactSection: React.FC = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Toggle visibility based on intersection to allow re-triggering animation
         setIsVisible(entry.isIntersecting);
       },
       { 
         threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px' // Slightly delayed trigger for better feel
+        rootMargin: '0px 0px -100px 0px' 
       }
     );
 
@@ -67,7 +66,7 @@ const ImpactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
-          {/* Image Side - Animated and Colored */}
+          {/* Image Side - Updated with the user's new image URL */}
           <div className="order-1 md:order-1 relative group">
             <div 
               className={`transition-all duration-1000 ease-out transform ${
@@ -76,12 +75,11 @@ const ImpactSection: React.FC = () => {
                   : 'translate-y-24 opacity-0 scale-95'
               }`}
             >
-              {/* The outer box/card container */}
               <div className="relative bg-slate-900 p-3 rounded-[2rem] border border-blue-500/20 shadow-[0_0_50px_rgba(37,99,235,0.1)] transition-all duration-500 group-hover:shadow-[0_0_60px_rgba(37,99,235,0.2)]">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem]">
                   <img 
-                    src="https://i.postimg.cc/tCWVmWTT/Untitled-design-(4).png" 
-                    alt="Abhishek Sharma" 
+                    src="https://i.postimg.cc/QC7fSxqP/Untitled-design-(4).png" 
+                    alt="Abhishek Sharma - Video Editing Results" 
                     className="w-full h-full object-cover transition-all duration-700 scale-105 group-hover:scale-110"
                     onError={(e) => {
                       e.currentTarget.src = "https://ui-avatars.com/api/?name=Abhishek+Visuals&background=1e293b&color=3b82f6&size=512&font-size=0.33";
@@ -98,7 +96,7 @@ const ImpactSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Text & Stats Side - Animated */}
+          {/* Text & Stats Side */}
           <div className={`order-2 md:order-2 transition-all duration-1000 delay-200 ease-out ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
           }`}>

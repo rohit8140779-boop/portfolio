@@ -84,14 +84,15 @@ CATEGORIES.forEach((cat, index) => {
       description: "Fast-paced vertical edit designed for high retention on social platforms.",
       client: "Instagram Brand"
     };
+    // Updated as per user request
     projects[1] = {
       id: "short-form-vimeo-2",
-      title: "Finance Strategy Reel",
+      title: "Meta Ad",
       category: "Short Form Reels",
-      thumbnail: "https://vumbnail.com/1146938863.jpg", 
-      videoUrl: "https://vimeo.com/1146938863?fl=pl&fe=sh", 
-      description: "High-energy finance content using bold captions, stock footage, and sound effects to retain viewer attention.",
-      client: "Finance Influencer"
+      thumbnail: "https://vumbnail.com/1158106844.jpg", 
+      videoUrl: "https://vimeo.com/1158106844?share=copy&fl=sv&fe=ci", 
+      description: "High-conversion direct response Meta Ad designed for maximum engagement and brand performance.",
+      client: "Digital Advertiser"
     };
     projects[2] = {
       id: "short-form-vimeo-3",

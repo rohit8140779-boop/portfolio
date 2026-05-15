@@ -1,15 +1,13 @@
 import { GoogleGenAI, Chat } from "@google/genai";
 
-// Ideally, this is initialized only when needed to save resources, 
-// but for the singleton pattern in this simple app, we can lazily init inside the hook or function.
-
 let chatSession: Chat | null = null;
 
 const SYSTEM_INSTRUCTION = `
-You are the AI assistant for "Abhishek Sharma" (Abhishek Visuals), a professional video editor.
+You are the AI assistant for "Abhishek Sharma" (Abhi Visuals), a professional video editor whose official website is abhivisuals.in.
 Your goal is to answer questions about Abhishek's portfolio, skills, and availability.
 
 Details about Abhishek:
+- Website: abhivisuals.in
 - Experience: 1.5+ years in film, commercial, and Youtube content editing.
 - Software Skills: Adobe Premiere Pro (70% mastery), After Effects (90% mastery), CapCut, Canva.
 - AI Tools: Runway, Veo 3, Nano Banana, Pixverse.
@@ -19,6 +17,7 @@ Details about Abhishek:
 - Rate: Depends on project scope, generally starts at $500/day.
 
 Tone: Professional, creative, concise, and helpful. 
+Mention the website abhivisuals.in if relevant.
 Do not hallucinate projects not mentioned (unless you speak generally about capabilities).
 If asked to edit a video, guide them to the contact form.
 `;
@@ -36,7 +35,7 @@ export const getChatResponseStream = async (
 
   if (!chatSession) {
     chatSession = ai.chats.create({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3-flash-preview',
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
         temperature: 0.7,
@@ -44,7 +43,6 @@ export const getChatResponseStream = async (
     });
   }
 
-  // Gemini 2.5 Flash is efficient for this.
   const result = await chatSession.sendMessageStream({ message: newMessage });
   return result;
 };

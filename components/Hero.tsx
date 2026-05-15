@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           muted
           playsInline
           className="w-full h-full object-cover opacity-20 blur-sm scale-105 grayscale"
-          src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+          src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
         <div className="absolute inset-0 bg-black/60"></div>
@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ scrollToSection }) => {
           AVAILABLE FOR FREELANCE & JOB
         </div>
 
-        {/* Central Intro Video - Muted=0 for Sound by default */}
+        {/* Central Intro Video - Restored to previous link */}
         <div className="w-full max-w-3xl aspect-video bg-gray-900 rounded-xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.15)] border border-white/10 mb-6 group relative animate-reveal">
             <iframe 
               src="https://player.vimeo.com/video/1150871309?badge=0&autopause=0&player_id=0&app_id=58479&loop=1&autoplay=1&muted=0"

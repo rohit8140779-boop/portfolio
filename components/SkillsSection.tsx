@@ -120,7 +120,7 @@ const SkillsSection: React.FC = () => {
                 </div>
               }
             />
-            {/* Canva */}
+            {/* Canva - Updated Image URL */}
             <SkillCircle 
               name="Canva" 
               percentage={60} 
@@ -128,7 +128,7 @@ const SkillsSection: React.FC = () => {
               logo={
                  <div className="w-16 h-16 bg-white border border-white/20 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(0,196,204,0.2)] overflow-hidden">
                   <img 
-                    src="https://i.postimg.cc/05HfqYPY/download.jpg" 
+                    src="https://i.postimg.cc/WzkqycvB/download-(2).jpg" 
                     alt="Canva" 
                     className="w-full h-full object-cover scale-[1.5]"
                    />
