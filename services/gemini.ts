@@ -26,23 +26,32 @@ export const getChatResponseStream = async (
   history: { role: string; text: string }[],
   newMessage: string
 ) => {
-  const apiKey = process.env.API_KEY;
-  if (!apiKey) {
-    throw new Error("API Key not found");
-  }
-
-  const ai = new GoogleGenAI({ apiKey });
-
-  if (!chatSession) {
-    chatSession = ai.chats.create({
-      model: 'gemini-3-flash-preview',
-      config: {
-        systemInstruction: SYSTEM_INSTRUCTION,
-        temperature: 0.7,
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify({ message: newMessage, history }),
     });
-  }
 
-  const result = await chatSession.sendMessageStream({ message: newMessage });
-  return result;
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || "Failed to get AI response");
+    }
+
+    const data = await response.json();
+    
+    // Simulating a stream response to avoid breaking existing UI that might expect it
+    // Note: The backend returns full text, but we can wrap it in a pseudo-stream interface if needed
+    return {
+      stream: (async function* () {
+        yield { text: () => data.text };
+      })(),
+      response: { text: () => data.text }
+    };
+  } catch (error: any) {
+    console.error("Chat Error:", error);
+    throw error;
+  }
 };

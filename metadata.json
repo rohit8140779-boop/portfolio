@@ -1,5 +1,6 @@
 {
   "name": "Abhi Visuals - Professional Video Editor",
   "description": "The official portfolio of Abhishek Sharma (abhivisuals.in). Specializing in high-retention Youtube editing, cinematic commercials, and AI-driven visual storytelling.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
